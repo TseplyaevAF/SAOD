@@ -1,0 +1,13 @@
+﻿  Search Functions.cpp
+E:\прога\C++\САОД\Search Functions\Search Functions\Search Functions.cpp(41,39): warning C4305: инициализация: усечение из "double" в "float"
+E:\прога\C++\САОД\Search Functions\Search Functions\Sort.h(29,25): warning C4018: <: несоответствие типов со знаком и без знака
+E:\прога\C++\САОД\Search Functions\Search Functions\Search Functions.cpp(42): message : выполняется компиляция ссылки на экземпляр шаблон функции "void selectSort<float>(T *,int)"
+E:\прога\C++\САОД\Search Functions\Search Functions\Search Functions.cpp(42): message :         with
+E:\прога\C++\САОД\Search Functions\Search Functions\Search Functions.cpp(42): message :         [
+E:\прога\C++\САОД\Search Functions\Search Functions\Search Functions.cpp(42): message :             T=float
+E:\прога\C++\САОД\Search Functions\Search Functions\Search Functions.cpp(42): message :         ]
+  Search.cpp
+  Sort.cpp
+  Создание кода...
+E:\прога\C++\САОД\Search Functions\Search Functions\Sort.h(32,30): warning C4018: <: несоответствие типов со знаком и без знака
+  Search Functions.vcxproj -> E:\прога\C++\САОД\Search Functions\x64\Debug\Search Functions.exe

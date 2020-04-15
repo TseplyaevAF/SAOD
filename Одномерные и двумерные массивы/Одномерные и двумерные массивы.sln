@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29409.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Одномерные и двумерные массивы", "Одномерные и двумерные массивы\Одномерные и двумерные массивы.vcxproj", "{2FC931F0-DF37-49B4-9F44-5D806BF76FDE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2FC931F0-DF37-49B4-9F44-5D806BF76FDE}.Debug|x64.ActiveCfg = Debug|x64
+		{2FC931F0-DF37-49B4-9F44-5D806BF76FDE}.Debug|x64.Build.0 = Debug|x64
+		{2FC931F0-DF37-49B4-9F44-5D806BF76FDE}.Debug|x86.ActiveCfg = Debug|Win32
+		{2FC931F0-DF37-49B4-9F44-5D806BF76FDE}.Debug|x86.Build.0 = Debug|Win32
+		{2FC931F0-DF37-49B4-9F44-5D806BF76FDE}.Release|x64.ActiveCfg = Release|x64
+		{2FC931F0-DF37-49B4-9F44-5D806BF76FDE}.Release|x64.Build.0 = Release|x64
+		{2FC931F0-DF37-49B4-9F44-5D806BF76FDE}.Release|x86.ActiveCfg = Release|Win32
+		{2FC931F0-DF37-49B4-9F44-5D806BF76FDE}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9ABE285C-83CD-4BD9-B16C-47FC9758928F}
+	EndGlobalSection
+EndGlobal

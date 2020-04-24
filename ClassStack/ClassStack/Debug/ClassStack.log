@@ -1,5 +1,1 @@
-﻿  ClassStack.cpp
-  Stack.cpp
-  Создание кода...
-E:\прога\C++\САОД\ClassStack\ClassStack\ClassStack.cpp(9,20): warning C4018: <: несоответствие типов со знаком и без знака
-  ClassStack.vcxproj -> E:\прога\C++\САОД\ClassStack\Debug\ClassStack.exe
+﻿  ClassStack.vcxproj -> E:\прога\C++\САОД\ClassStack\Debug\ClassStack.exe

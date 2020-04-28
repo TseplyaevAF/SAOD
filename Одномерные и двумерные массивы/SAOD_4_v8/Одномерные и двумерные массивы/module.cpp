@@ -12,12 +12,20 @@ void init_dots(Point* point, int low, int high, int n) {
 }
 
 void write_dots_file(Point* point, int n, std::ofstream& f) {
-	f << "Точки:" << std::endl;
+	f << " Координаты точек:" << std::endl;
+	f << "X: ";
 	for (int i = 0; i < n; i++)
 	{
-		f << "(" << point[i].x << "; " << point[i].y << ")" << std::endl;
+		f << point[i].x << "  ";
 	}
 	f << std::endl;
+
+	f << "Y: ";
+	for (int i = 0; i < n; i++)
+	{
+		f << point[i].y << "  ";
+	}
+	f << "\n\n";
 }
 
 void choice_dots(Point* point, int& res1, int& res2, int r, int n, std::ofstream& f) {

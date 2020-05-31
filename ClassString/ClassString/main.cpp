@@ -3,7 +3,7 @@
 
 using namespace std;
 
-// возвращает символ первого вхождения строки str в строку pattern
+// возвращает индекс символа, с которого строка str входит в строку pattern
 // поиск осуществляется, начиная с позиции startindex
 int FindPat(String pattern, String str, int startindex)
 {
@@ -41,13 +41,14 @@ int main()
 	// определить строку-образец и строку для поиска
 	String pattern, str;
 	//
-	int startindex = 0, // поиск подстроки с текущего индекса
+	int startindex = 0, // начальный индекс поиска подстроки
 		index = 0, // индекс, с которого подстрока начинается в исходной строке
 		count = 0; // кол-во вхождений подстроки в строку
-	cout << "Введите подстроку для поиска: ";
-	str.ReadString();
 	cout << "Введите строку:" << endl;
 	pattern.ReadString();
+	cout << "Введите подстроку для поиска: ";
+	str.ReadString();
+	cout << endl;
 	while (startindex < pattern.getSize()) {
 		index = FindPat(pattern, str, startindex);
 		if (index == -1)

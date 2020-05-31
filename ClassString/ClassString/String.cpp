@@ -60,8 +60,8 @@ String String::Substr(int index, int count) const {
 		buf[k] = getSymbol(i);
 		k++;
 	}
-	//strncpy(buf2, buf, count);
 	String temp(buf);
+	delete[] buf;
 	return temp;
 }
 

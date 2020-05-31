@@ -17,8 +17,6 @@ public:
 	// конструктор, выделяет память и копирует в строку C++
 	String(char* s);
 
-	//~String() { delete[] str; }
-
 	// оператор присваивания
 	String& operator=(const String& s);
 
@@ -50,4 +48,3 @@ public:
 	// поиск вхождения символа в строке, начиная с позиции start
 	int Find(char c, int start) const;
 };
-

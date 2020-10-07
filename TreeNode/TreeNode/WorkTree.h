@@ -3,40 +3,27 @@
 #include "TreeNode.h"
 #include "Stack.h"
 #include <random>
+#include <fstream>
 
 using namespace std;
 
-template <class T>
-TreeNode<T>* GetTreeNode(T item, TreeNode<T>* lptr = nullptr,
-    TreeNode<T>* rptr = nullptr)
-{
-    TreeNode<T>* p;
-    p = new TreeNode<T>(item, lptr, rptr);
-    if (p == nullptr)
-    {
-        cout << "Ошибка при выделении памяти!" << endl;
-        exit(1);
-    }
-    return p;
-}
-
-// функция вставки узла в бинарное дерево поиска
-// root - корень дерева
-// val - значение
-template <class T>
-TreeNode <T>* InsertNode(TreeNode <T>* root, T val) {
-    if (root == nullptr) {
-        root = new TreeNode<T>(val);
-        if (root != nullptr)
-            root->data = val;
-        return root;
-    }
-    if (val < root->data)
-        root->SetLeft(InsertNode(root->Left(), val));
-    else
-        root->SetRight(InsertNode(root->Right(), val));
-    return root;
-}
+//// функция вставки узла в бинарное дерево поиска
+//// root - корень дерева
+//// val - значение
+//template <class T>
+//TreeNode <T>* InsertNode(TreeNode <T>* root, T val) {
+//    if (root == nullptr) {
+//        root = new TreeNode<T>(val);
+//        if (root != nullptr)
+//            root->data = val;
+//        return root;
+//    }
+//    if (val < root->data)
+//        root->SetLeft(InsertNode(root->Left(), val));
+//    else
+//        root->SetRight(InsertNode(root->Right(), val));
+//    return root;
+//}
 
 // эта функция использует обратный метод прохождения.
 // во время посещения узла проверяется, является ли он листовым
@@ -103,7 +90,7 @@ void PrintTree(TreeNode<T>* t, int level)
 
 // печать дерева вертикально
 template<class T>
-void PrintVTree(TreeNode<T>* root) {
+void PrintVTree(TreeNode<T>* root, ofstream & fout) {
     Stack<TreeNode<T> *> globalStack;
     globalStack.Push(root);
     int emptyLeaf = 32;
@@ -114,14 +101,14 @@ void PrintVTree(TreeNode<T>* root) {
         isRowEmpty = true;
         for (unsigned i = 0; i < emptyLeaf; i++)
         {
-            cout << " ";
+            fout << " ";
         }
         while (!globalStack.isEmpty()) 
         {
             TreeNode<T> *temp = globalStack.Pop();
             if (temp != nullptr) 
             {
-                cout << temp->data;
+                fout << temp->data;
                 localStack.Push(temp->Left());
                 localStack.Push(temp->Right());
                 if (temp->Left() != nullptr || temp->Right() != nullptr)
@@ -129,65 +116,17 @@ void PrintVTree(TreeNode<T>* root) {
             }
             else
             {
-                cout << "  ";
+                fout << "  ";
                 localStack.Push(nullptr);
                 localStack.Push(nullptr);
             }
             for (unsigned i = 0; i < emptyLeaf*2-2; i++)
-                cout << " ";
+                fout << " ";
         }
-        cout << "\n\n\n";
+        fout << "\n\n\n";
         emptyLeaf /= 2;
         while (!localStack.isEmpty()) {
             globalStack.Push(localStack.Pop());
         }
     }
-}
-
-// создать дубликат дерева t и возвратить корень нового дерева
-template <class T>
-TreeNode<T>* CopyTree(TreeNode<T>* t)
-{
-    // newnode - новый узел
-    // указатели newlptr и newrptr адресуют сыновей newnode
-    TreeNode<T>* newlptr, * newrptr, * newnode;
-    // остановить рекурсивное прохождение при достижении пустого дерева
-    if (t == nullptr)
-        return nullptr;
-    // CopyTree строит новое дерево в процессе прохождения узлов дерева t. в каждом
-    // узле этого дерева функция CopyTree проверяет наличие левого сына, если он
-    // есть, создается его копия, в противном случае возвращается NULL. CopyTree
-    // создает копию узла с помощью GetTreeNode и подвешивает к нему копии сыновей.
-    if (t->Left() != nullptr)
-        newlptr = CopyTree(t->Left());
-    else
-        newlptr = nullptr;
-    if (t->Right() != nullptr)
-        newrptr = CopyTree(t->Right());
-    else
-        newrptr = nullptr;
-    // построить новое дерево снизу вверх, сначала создавая
-    // двух сыновей, а затем их родителя
-    newnode = GetTreeNode(t->data, newlptr, newrptr);
-    // вернуть указатель на вновь созданное дерево
-    return newnode;
-}
-
-// использовать обратный алгоритм для прохождения узлов дерева
-//и удалить каждый узел при его посещении
-template <class T>
-void DeleteTree(TreeNode<T>* t)
-{
-    if (t != NULL)
-    {
-        DeleteTree(t->Left());
-        DeleteTree(t->Right());
-        FreeTreeNode(t);
-    }
-}
-
-template <class T>
-void FreeTreeNode(TreeNode<T>* p)
-{
-    delete p;
 }
